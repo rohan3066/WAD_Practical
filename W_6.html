@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table Generator</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      margin: 10px;
+    }
+    td, th {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center;
+    }
+    .highlight {
+      background-color: lightgray;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" id="input1" placeholder="e.g., 3#3#3">
+  <input type="text" id="input2" placeholder="e.g., 3#3#2">
+  <button onclick="generateTables()">Generate Tables</button>
+  <div id="result"></div>
+
+  <script>
+    function generateTables() {
+      const input1 = document.getElementById('input1').value.split('#').map(Number);
+      const input2 = document.getElementById('input2').value.split('#').map(Number);
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = '';
+
+      // Validate inputs
+      if (input1.length !== 3 || input2.length !== 3 || input1.some(isNaN) || input2.some(isNaN)) {
+        resultDiv.innerHTML = 'Please enter valid input (e.g., 3#3#3)';
+        return;
+      }
+
+      const [rows1, cols1, start1] = input1;
+      const [rows2, cols2, start2] = input2;
+
+      // Generate first table
+      let table1 = '<h3>Table 1</h3><table>';
+      for (let i = 0; i < rows1; i++) {
+        table1 += '<tr>';
+        for (let j = 0; j < cols1; j++) {
+          table1 += `<td>${start1 + i * cols1 + j}</td>`;
+        }
+        table1 += '</tr>';
+      }
+      table1 += '</table>';
+
+      // Generate second table
+      let table2 = '<h3>Table 2</h3><table>';
+      for (let i = 0; i < rows2; i++) {
+        table2 += '<tr>';
+        for (let j = 0; j < cols2; j++) {
+          table2 += `<td>${start2 + i * cols2 + j}</td>`;
+        }
+        table2 += '</tr>';
+      }
+      table2 += '</table>';
+
+      // Generate third table based on condition
+      let table3 = '';
+      if (rows1 === rows2 && cols1 === cols2) {
+        table3 = '<h3>Table 3</h3><table>';
+        let values = new Set();
+        let hasDuplicates = false;
+        for (let i = 0; i < rows1; i++) {
+          table3 += '<tr>';
+          for (let j = 0; j < cols1; j++) {
+            const val1 = start1 + i * cols1 + j;
+            const val2 = start2 + i * cols2 + j;
+            let cellValue = val1 === val2 ? val1 : val1 * val2;
+            if (values.has(cellValue)) hasDuplicates = true;
+            values.add(cellValue);
+            table3 += `<td class="${hasDuplicates ? 'highlight' : ''}">${cellValue}</td>`;
+          }
+          table3 += '</tr>';
+        }
+        table3 += '</table>';
+      } else {
+        table3 = '<h3>Table 3</h3><p>No third table (rows and columns must match)</p>';
+      }
+
+      resultDiv.innerHTML = table1 + table2 + table3;
+    }
+  </script>
+</body>
+</html>
+
+<!-- 
+Questions and Answers
+Q: What is the purpose of the input format rows#columns#starting_value in this project?
+A: The input format rows#columns#starting_value allows users to specify the dimensions (number of rows and columns) and the initial value for generating tables. The # delimiter separates these three parameters, enabling the code to parse and create tables dynamically based on user input.
+Q: How does the code handle the generation of the first and second tables?
+A: The code splits the input strings (e.g., 3#3#5) into arrays of numbers using split('#').map(Number). It then uses nested loops to generate each table, calculating cell values as starting_value + (row_index * columns) + column_index, and constructs HTML tables for display.
+Q: What conditions must be met to generate the third table?
+A: The third table is generated only if the number of rows of the first table equals the number of rows of the second table, and the number of columns of the first table equals the number of columns of the second table. If these conditions are not met, a message is displayed instead.
+Q: How are the values in the third table determined?
+A: The third table’s values depend on a comparison of the first cell values of the first and second tables. If they are equal, the third table uses the first table’s values. If they differ, it multiplies the corresponding cell values from both tables (e.g., first table cell 3 * second table cell 2 = 6).
+Q: What is the role of the highlight class in the third table?
+A: The highlight class is applied to cells in the third table that contain duplicate values. The code uses a Set to track unique values, and if a value repeats, the hasDuplicates flag triggers the class, changing the background color (e.g., to light gray) to visually indicate repetition.
+Q: Explain how the code detects duplicate values in the third table.
+A: The code maintains a Set called values to store unique cell values as they are generated. Before adding a new value, it checks if the Set already contains it. If yes, the hasDuplicates flag is set to true, and the highlight class is applied to that cell.
+Q: What happens if you input 3#3#5 and 2#3#4?
+A: The first table will be 3x3 starting at 5 (5 to 13), and the second table will be 2x3 starting at 4 (4 to 9). Since the row counts (3 vs. 2) don’t match, no third table is generated, and a message like ‘No third table (rows and columns must match)’ is displayed.
+Q: How would you modify the code to handle invalid inputs?
+A: I would enhance the input validation by checking for non-numeric values or incorrect format (e.g., less than three parts after splitting). Currently, it checks if length !== 3 or some(isNaN), and displays an error message. I could add specific error messages for each case, like ‘Please enter three numbers separated by #’.
+Q: Why is the starting value important in this application?
+A: The starting value determines the initial number in each table and influences the sequence of values. It allows flexibility in generating different tables (e.g., starting at 1, 2, or 5), and in the third table, it affects the multiplication or equality comparison logic.
+Q: How can you test the functionality of this code?
+A: You can test it by opening the HTML file in a browser, entering various inputs (e.g., 3#3#3 and 3#3#2), and clicking ‘Generate Tables’. Check the first and second tables for correct sequencing, the third table for conditional logic, and the highlighting for duplicates. Use tools like the browser’s developer console to debug if needed.
+Q: What would happen if the input for both tables is 2#2#1?
+**A: Both tables will be 2x2 starting at 1, resulting in:
+First Table: 1, 2; 3, 4
+Second Table: 1, 2; 3, 4
+Third Table: Since rows and columns match, and first cells (1 vs. 1) are equal, it will use the first table’s values (1, 2; 3, 4) with no highlights if no duplicates occur beyond the first row.**
+Q: How does the CSS contribute to this project?
+A: The CSS styles the tables with borders and centered text using border-collapse, border, and text-align. The highlight class sets a background-color (e.g., lightgray) to visually distinguish duplicate values in the third table, enhancing user understanding.
+Q: What improvements would you suggest for this code?
+A: I would add more robust input validation (e.g., ensuring positive integers), implement error handling with try-catch, add a reset button to clear inputs, and possibly use a framework like React for a more interactive UI. I could also allow customization of the highlight color via user input.
+Q: Explain the multiplication logic in the third table with an example.
+**A: If the first cells differ, each cell in the third table is the product of the corresponding cells from the first and second tables. For 3#3#3 and 3#3#2:
+First cells: 3 * 2 = 6
+Next: 4 * 3 = 12, 5 * 4 = 20
+Second row: 6 * 5 = 30, 7 * 6 = 42, 8 * 7 = 56
+This continues for all cells, creating a multiplication-based table.**
+Q: How would you extend this code to support more than two input tables?
+A: I would modify the code to accept additional input fields (e.g., a third input), parse them similarly, and extend the third table logic to compare all tables’ first cells. If all match, use the first table’s values; otherwise, multiply all corresponding cells, updating the duplicate detection logic accordingly. -->

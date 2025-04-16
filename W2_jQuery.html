@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple jQuery Mobile Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- jQuery and jQuery Mobile CDN -->
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+<!-- Home Page -->
+<div data-role="page" id="home">
+  <div data-role="header">
+    <h1>My Mobile Site</h1>
+  </div>
+
+  <div data-role="content">
+    <h2>Welcome!</h2>
+    <p>This is a simple mobile website using jQuery Mobile.</p>
+  </div>
+
+  <div data-role="footer" data-position="fixed">
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#home" class="ui-btn-active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- About Page -->
+<div data-role="page" id="about">
+  <div data-role="header">
+    <h1>About</h1>
+  </div>
+
+  <div data-role="content">
+    <p>This site is built using jQuery Mobile framework.</p>
+  </div>
+
+  <div data-role="footer" data-position="fixed">
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about" class="ui-btn-active">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Page -->
+<div data-role="page" id="contact">
+  <div data-role="header">
+    <h1>Contact</h1>
+  </div>
+
+  <div data-role="content">
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name">
+
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email">
+
+      <label for="message">Message:</label>
+      <textarea name="message" id="message"></textarea>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <div data-role="footer" data-position="fixed">
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact" class="ui-btn-active">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+
+<!-- ORAL QUESTION PREP
+
+jQuery Mobile is a touch-optimized web framework (a JavaScript library) designed to create responsive web applications that work seamlessly on smartphones, tablets, and desktops using a single codebase.
+
+📌 Key Features of jQuery Mobile:
+Cross-Platform Compatibility
+Works on all major mobile platforms (iOS, Android, Windows Phone) and desktop browsers.
+
+Touch-Optimized UI Widgets
+Comes with ready-to-use components like buttons, sliders, dialogs, popups, and list views—all optimized for mobile touchscreens.
+
+Theming Support
+Includes a powerful ThemeRoller tool to easily customize the look and feel.
+
+Single Page Navigation
+Uses AJAX-based navigation for smooth transitions and better performance.
+
+Lightweight and Easy to Learn
+Built on top of jQuery, so it’s familiar and easy for developers already using jQuery.
+
+Progressive Enhancement
+Works well with older browsers too, but provides extra features on newer ones.
+
+📱 What Can You Build With It?
+Mobile web apps
+
+Hybrid apps using tools like PhoneGap/Cordova
+
+Responsive websites with mobile-first UI
+
+🔧 Example UI Widgets:
+data-role="page" – creates a mobile-friendly page
+
+data-role="button" – creates a stylized button
+
+data-role="navbar" – navigation bar
+
+data-role="listview" – stylized list with auto-formatting -->
