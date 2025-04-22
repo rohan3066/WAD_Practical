@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Product Listing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="bg-dark text-white text-center py-3">
+        <h1>Online Store</h1>
+        <p class="lead">Great gifts and self gifts for friends and loved ones on special occasions. Choose from many different sizes and styles to sell online.</p>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Filters</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="categoryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Target Market
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="categoryDropdown">
+                            <li><a class="dropdown-item" href="#">USA</a></li>
+                            <li><a class="dropdown-item" href="#">Canada</a></li>
+                            <li><a class="dropdown-item" href="#">United Kingdom</a></li>
+                            <li><a class="dropdown-item" href="#">Europe</a></li>
+                            <li><a class="dropdown-item" href="#">Australia/NZ</a></li>
+                            <li><a class="dropdown-item" href="#">China</a></li>
+                            <li><a class="dropdown-item" href="#">Other</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="printAreaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Print Area
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="printAreaDropdown">
+                            <li><a class="dropdown-item" href="#">All areas</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="overPrintDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Over Print
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="overPrintDropdown">
+                            <li><a class="dropdown-item" href="#">All over print</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="productExteriorDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Product Exterior
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="productExteriorDropdown">
+                            <li><a class="dropdown-item" href="#">All</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="d-flex">
+                <select class="form-select me-2" aria-label="Sort by">
+                    <option selected>Sort by Popularity</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="productGrid">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://imgs.search.brave.com/CDA8aSvFbxmJMBAlcmIpE4YJdc0F9uJheh8qKqQ3w7Q/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNTIx/NjYzMDUzL3Bob3Rv/L2JpZy1zdGFjay1v/Zi1jb2xvci1oYXJk/Y292ZXItYm9va3Mu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PV8yTDlNRXI2WTl3/QXRtT1gtckcyS2Fi/Zjl5VjM5c1NOd1dj/Y3paQWJCVGs9" class="card-img-top" alt="Ceramic Mug 11oz">
+                    <div class="card-body">
+                        <h5 class="card-title">Ceramic Mug 11oz</h5>
+                        <p class="card-text">By Generic brand</p>
+                        <p class="card-text"><small class="text-muted">From USD 3.40 with Printify Premium</small></p>
+                        <p class="text-success">1 size - District Photo</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://imgs.search.brave.com/CDA8aSvFbxmJMBAlcmIpE4YJdc0F9uJheh8qKqQ3w7Q/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNTIx/NjYzMDUzL3Bob3Rv/L2JpZy1zdGFjay1v/Zi1jb2xvci1oYXJk/Y292ZXItYm9va3Mu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PV8yTDlNRXI2WTl3/QXRtT1gtckcyS2Fi/Zjl5VjM5c1NOd1dj/Y3paQWJCVGs9" class="card-img-top" alt="Accent Coffee Mug 11oz">
+                    <div class="card-body">
+                        <h5 class="card-title">Accent Coffee Mug 11oz</h5>
+                        <p class="card-text">By Generic brand</p>
+                        <p class="card-text"><small class="text-muted">From USD 5.22 with Printify Premium</small></p>
+                        <p class="text-success">1 size - 5 colors - District Photo</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://imgs.search.brave.com/CDA8aSvFbxmJMBAlcmIpE4YJdc0F9uJheh8qKqQ3w7Q/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNTIx/NjYzMDUzL3Bob3Rv/L2JpZy1zdGFjay1v/Zi1jb2xvci1oYXJk/Y292ZXItYm9va3Mu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PV8yTDlNRXI2WTl3/QXRtT1gtckcyS2Fi/Zjl5VjM5c1NOd1dj/Y3paQWJCVGs9" class="card-img-top" alt="Ceramic Mug 15oz">
+                    <div class="card-body">
+                        <h5 class="card-title">Ceramic Mug 15oz</h5>
+                        <p class="card-text">By Generic brand</p>
+                        <p class="card-text"><small class="text-muted">From USD 5.66 with Printify Premium</small></p>
+                        <p class="text-success">1 size - District Photo</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://imgs.search.brave.com/CDA8aSvFbxmJMBAlcmIpE4YJdc0F9uJheh8qKqQ3w7Q/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNTIx/NjYzMDUzL3Bob3Rv/L2JpZy1zdGFjay1v/Zi1jb2xvci1oYXJk/Y292ZXItYm9va3Mu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PV8yTDlNRXI2WTl3/QXRtT1gtckcyS2Fi/Zjl5VjM5c1NOd1dj/Y3paQWJCVGs9" class="card-img-top" alt="White Ceramic Mug">
+                    <div class="card-body">
+                        <h5 class="card-title">White Ceramic Mug</h5>
+                        <p class="card-text">By ORCA Coatings</p>
+                        <p class="card-text"><small class="text-muted">From USD 6.88 with Printify Premium</small></p>
+                        <p class="text-success">2 sizes - MyLocker</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://imgs.search.brave.com/CDA8aSvFbxmJMBAlcmIpE4YJdc0F9uJheh8qKqQ3w7Q/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNTIx/NjYzMDUzL3Bob3Rv/L2JpZy1zdGFjay1v/Zi1jb2xvci1oYXJk/Y292ZXItYm9va3Mu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PV8yTDlNRXI2WTl3/QXRtT1gtckcyS2Fi/Zjl5VjM5c1NOd1dj/Y3paQWJCVGs9" class="card-img-top" alt="Mug 11oz">
+                    <div class="card-body">
+                        <h5 class="card-title">Mug 11oz</h5>
+                        <p class="card-text">By Generic brand</p>
+                        <p class="card-text"><small class="text-muted">From USD 3.44 with Printify Premium</small></p>
+                        <p class="text-success">1 size - 2 colors - District Photo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
