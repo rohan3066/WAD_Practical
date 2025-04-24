@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Wireless Headphones",
+        "price": 59.99,
+        "image": "https://imgs.search.brave.com/G4aKCoH6NN4eeZUoscyMGM3oEPGyVhKiGfFd1gx7Q1o/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTcy/ODQ3MjE4L3Bob3Rv/L2hlYWRwaG9uZXMu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PVZYTEtIVXRHZEQ4/cFBIOFB6UkhTLTg3/UW5kekRzc1pwTWRz/T2ZaTmhLdVU9"
+    },
+    {
+        "id": 2,
+        "name": "Smart Watch",
+        "price": 129.99,
+        "image": "https://imgs.search.brave.com/G4aKCoH6NN4eeZUoscyMGM3oEPGyVhKiGfFd1gx7Q1o/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTcy/ODQ3MjE4L3Bob3Rv/L2hlYWRwaG9uZXMu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PVZYTEtIVXRHZEQ4/cFBIOFB6UkhTLTg3/UW5kekRzc1pwTWRz/T2ZaTmhLdVU9"
+    },
+    {
+        "id": 3,
+        "name": "Bluetooth Speaker",
+        "price": 39.99,
+        "image": "https://imgs.search.brave.com/G4aKCoH6NN4eeZUoscyMGM3oEPGyVhKiGfFd1gx7Q1o/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTcy/ODQ3MjE4L3Bob3Rv/L2hlYWRwaG9uZXMu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PVZYTEtIVXRHZEQ4/cFBIOFB6UkhTLTg3/UW5kekRzc1pwTWRz/T2ZaTmhLdVU9"
+    },
+    {
+        "id": 4,
+        "name": "Laptop Backpack",
+        "price": 29.99,
+        "image": "https://imgs.search.brave.com/G4aKCoH6NN4eeZUoscyMGM3oEPGyVhKiGfFd1gx7Q1o/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTcy/ODQ3MjE4L3Bob3Rv/L2hlYWRwaG9uZXMu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PVZYTEtIVXRHZEQ4/cFBIOFB6UkhTLTg3/UW5kekRzc1pwTWRz/T2ZaTmhLdVU9"
+    }
+]

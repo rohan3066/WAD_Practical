@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 350px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+        .toggle {
+            text-align: center;
+            margin-top: 10px;
+            color: #007bff;
+            cursor: pointer;
+        }
+        .toggle:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Login Form -->
+        <div id="loginForm">
+            <h2>Login</h2>
+            <div class="form-group">
+                <label for="loginUsername">Username</label>
+                <input type="text" id="loginUsername" placeholder="Enter username">
+                <div id="loginUsernameError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword" placeholder="Enter password">
+                <div id="loginPasswordError" class="error"></div>
+            </div>
+            <button onclick="handleLogin()">Login</button>
+            <div class="toggle" onclick="toggleForm('register')">New user? Register here</div>
+        </div>
+
+        <!-- Registration Form -->
+        <div id="registerForm" style="display: none;">
+            <h2>Register</h2>
+            <div class="form-group">
+                <label for="regName">Name</label>
+                <input type="text" id="regName" placeholder="Enter full name">
+                <div id="regNameError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="regEmail">Email</label>
+                <input type="email" id="regEmail" placeholder="Enter email">
+                <div id="regEmailError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="regMobile">Mobile Number</label>
+                <input type="tel" id="regMobile" placeholder="Enter mobile number">
+                <div id="regMobileError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="regDob">Date of Birth</label>
+                <input type="date" id="regDob">
+                <div id="regDobError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="regCity">City</label>
+                <input type="text" id="regCity" placeholder="Enter city">
+                <div id="regCityError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="regAddress">Address</label>
+                <input type="text" id="regAddress" placeholder="Enter address">
+                <div id="regAddressError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="regPassword">Password</label>
+                <input type="password" id="regPassword" placeholder="Enter password">
+                <div id="regPasswordError" class="error"></div>
+            </div>
+            <button onclick="handleRegister()">Register</button>
+            <div class="toggle" onclick="toggleForm('login')">Already registered? Login here</div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle between login and register forms
+        function toggleForm(form) {
+            document.getElementById('loginForm').style.display = form === 'login' ? 'block' : 'none';
+            document.getElementById('registerForm').style.display = form === 'register' ? 'block' : 'none';
+        }
+
+        // Validation functions
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        function validateMobile(mobile) {
+            const re = /^\d{10}$/;
+            return re.test(mobile);
+        }
+
+        function validateDob(dob) {
+            const today = new Date();
+            const birthDate = new Date(dob);
+            const age = today.getFullYear() - birthDate.getFullYear();
+            return age >= 18;
+        }
+
+        function showError(elementId, message) {
+            const errorElement = document.getElementById(elementId);
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+            return false;
+        }
+
+        function clearErrors(formId) {
+            const errors = document.querySelectorAll(`#${formId} .error`);
+            errors.forEach(error => {
+                error.textContent = '';
+                error.style.display = 'none';
+            });
+        }
+
+        // Handle Login
+        function handleLogin() {
+            clearErrors('loginForm');
+            const username = document.getElementById('loginUsername').value.trim();
+            const password = document.getElementById('loginPassword').value.trim();
+
+            let isValid = true;
+
+            if (!username) {
+                isValid = showError('loginUsernameError', 'Username is required');
+            }
+            if (!password) {
+                isValid = showError('loginPasswordError', 'Password is required');
+            } else if (password.length < 6) {
+                isValid = showError('loginPasswordError', 'Password must be at least 6 characters');
+            }
+
+            if (isValid) {
+                const users = JSON.parse(localStorage.getItem('users') || '[]');
+                const user = users.find(u => u.email === username && u.password === password);
+                if (user) {
+                    alert('Login successful!');
+                    window.location.href = 'users.html';
+                } else {
+                    showError('loginUsernameError', 'Invalid username or password');
+                }
+            }
+        }
+
+        // Handle Registration
+        function handleRegister() {
+            clearErrors('registerForm');
+            const name = document.getElementById('regName').value.trim();
+            const email = document.getElementById('regEmail').value.trim();
+            const mobile = document.getElementById('regMobile').value.trim();
+            const dob = document.getElementById('regDob').value;
+            const city = document.getElementById('regCity').value.trim();
+            const address = document.getElementById('regAddress').value.trim();
+            const password = document.getElementById('regPassword').value.trim();
+
+            let isValid = true;
+
+            if (!name) {
+                isValid = showError('regNameError', 'Name is required');
+            }
+            if (!email) {
+                isValid = showError('regEmailError', 'Email is required');
+            } else if (!validateEmail(email)) {
+                isValid = showError('regEmailError', 'Invalid email format');
+            }
+            if (!mobile) {
+                isValid = showError('regMobileError', 'Mobile number is required');
+            } else if (!validateMobile(mobile)) {
+                isValid = showError('regMobileError', 'Mobile number must be 10 digits');
+            }
+            if (!dob) {
+                isValid = showError('regDobError', 'Date of birth is required');
+            } else if (!validateDob(dob)) {
+                isValid = showError('regDobError', 'You must be at least 18 years old');
+            }
+            if (!city) {
+                isValid = showError('regCityError', 'City is required');
+            }
+            if (!address) {
+                isValid = showError('regAddressError', 'Address is required');
+            }
+            if (!password) {
+                isValid = showError('regPasswordError', 'Password is required');
+            } else if (password.length < 6) {
+                isValid = showError('regPasswordError', 'Password must be at least 6 characters');
+            }
+
+            if (isValid) {
+                const userData = { name, email, mobile, dob, city, address, password };
+                simulateAjaxPost(userData)
+                    .then(() => {
+                        const users = JSON.parse(localStorage.getItem('users') || '[]');
+                        users.push(userData);
+                        localStorage.setItem('users', JSON.stringify(users));
+                        alert('Registration successful! Please login.');
+                        toggleForm('login');
+                    })
+                    .catch(error => {
+                        alert('Error registering user: ' + error.message);
+                    });
+            }
+        }
+
+        // Simulate AJAX POST request
+        function simulateAjaxPost(data) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    const users = JSON.parse(localStorage.getItem('users') || '[]');
+                    if (users.some(u => u.email === data.email)) {
+                        reject(new Error('Email already registered'));
+                    } else {
+                        resolve();
+                    }
+                }, 1000);
+            });
+        }
+    </script>
+</body>
+</html>
