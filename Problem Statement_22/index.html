@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pune Institute of Computer Technology (PICT)</title>
+    <!-- jQuery Mobile CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <!-- jQuery and jQuery Mobile JS -->
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        /* Custom styles */
+        .ui-header .ui-title {
+            font-size: 1.2em;
+            margin: 0.6em 0;
+        }
+        .ui-content {
+            padding: 1em;
+        }
+        .ui-footer {
+            text-align: center;
+            padding: 0.5em;
+        }
+    </style>
+</head>
+<body>
+    <!-- About Us Page -->
+    <div data-role="page" id="about" data-theme="b" data-transition="slide">
+        <div data-role="header">
+            <h1>About PICT</h1>
+        </div>
+        <div data-role="content">
+            <h2>About Us</h2>
+            <p>Pune Institute of Computer Technology (PICT), established in 1983, is a premier engineering college in Pune, Maharashtra, India. Affiliated with Savitribai Phule Pune University, PICT is renowned for its excellence in computer and information technology education.</p>
+            <div data-role="collapsible" data-collapsed="true">
+                <h3>Our Mission</h3>
+                <p>To provide quality education in engineering and technology, fostering innovation and research to meet global challenges.</p>
+            </div>
+            <div data-role="collapsible" data-collapsed="true">
+                <h3>Our Vision</h3>
+                <p>To be a leading institute in technical education, producing skilled professionals and contributing to societal development.</p>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#about" class="ui-btn-active">About</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#departments">Departments</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <p>&copy; 2025 PICT</p>
+        </div>
+    </div>
+
+    <!-- Courses Offered Page -->
+    <div data-role="page" id="courses" data-theme="b" data-transition="slide">
+        <div data-role="header">
+            <h1>Courses Offered</h1>
+        </div>
+        <div data-role="content">
+            <h2>Courses Offered</h2>
+            <p>PICT offers a range of undergraduate and postgraduate programs in engineering and technology.</p>
+            <div data-role="collapsible-set">
+                <div data-role="collapsible" data-collapsed="true">
+                    <h3>Undergraduate Programs</h3>
+                    <ul data-role="listview" data-inset="true">
+                        <li>B.E. in Computer Engineering</li>
+                        <li>B.E. in Information Technology</li>
+                        <li>B.E. in Electronics & Telecommunication Engineering</li>
+                    </ul>
+                </div>
+                <div data-role="collapsible" data-collapsed="true">
+                    <h3>Postgraduate Programs</h3>
+                    <ul data-role="listview" data-inset="true">
+                        <li>M.E. in Computer Engineering</li>
+                        <li>M.E. in Electronics & Telecommunication Engineering</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#courses" class="ui-btn-active">Courses</a></li>
+                    <li><a href="#departments">Departments</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <p>&copy; 2025 PICT</p>
+        </div>
+    </div>
+
+    <!-- Departments Page -->
+    <div data-role="page" id="departments" data-theme="b" data-transition="slide">
+        <div data-role="header">
+            <h1>Departments</h1>
+        </div>
+        <div data-role="content">
+            <h2>Departments</h2>
+            <p>PICT has several departments dedicated to excellence in education and research.</p>
+            <div data-role="collapsible-set">
+                <div data-role="collapsible" data-collapsed="true">
+                    <h3>Computer Engineering</h3>
+                    <p>Focuses on software development, algorithms, and system design.</p>
+                </div>
+                <div data-role="collapsible" data-collapsed="true">
+                    <h3>Information Technology</h3>
+                    <p>Specializes in IT infrastructure, cybersecurity, and data management.</p>
+                </div>
+                <div data-role="collapsible" data-collapsed="true">
+                    <h3>Electronics & Telecommunication</h3>
+                    <p>Covers communication systems, embedded systems, and signal processing.</p>
+                </div>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#departments" class="ui-btn-active">Departments</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <p>&copy; 2025 PICT</p>
+        </div>
+    </div>
+
+    <!-- Contact Information Page -->
+    <div data-role="page" id="contact" data-theme="b" data-transition="slide">
+        <div data-role="header">
+            <h1>Contact Us</h1>
+        </div>
+        <div data-role="content">
+            <h2>Contact Information</h2>
+            <p>Get in touch with us for inquiries or admissions.</p>
+            <div data-role="collapsible" data-collapsed="true">
+                <h3>Address</h3>
+                <p>Pune Institute of Computer Technology,<br>
+                   Survey No. 27, Near Trimurti Chowk, Dhankawadi,<br>
+                   Pune, Maharashtra 411043, India</p>
+            </div>
+            <div data-role="collapsible" data-collapsed="true">
+                <h3>Contact Details</h3>
+                <p><strong>Phone:</strong> +91 20 2437 1101<br>
+                   <strong>Email:</strong> info@pict.edu<br>
+                   <strong>Website:</strong> <a href="http://www.pict.edu" data-ajax="false">www.pict.edu</a></p>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#departments">Departments</a></li>
+                    <li><a href="#contact" class="ui-btn-active">Contact</a></li>
+                </ul>
+            </div>
+            <p>&copy; 2025 PICT</p>
+        </div>
+    </div>
+</body>
+</html>

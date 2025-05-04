@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PICT Student Clubs</title>
+    <!-- jQuery Mobile CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <!-- jQuery and jQuery Mobile JS -->
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        /* Custom styles */
+        .ui-header .ui-title {
+            font-size: 1.2em;
+            margin: 0.6em 0;
+        }
+        .ui-content {
+            padding: 1em;
+        }
+        .ui-footer {
+            text-align: center;
+            padding: 0.5em;
+        }
+        .club-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1em 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Home Page -->
+    <div data-role="page" id="home" data-theme="b" data-transition="slide">
+        <div data-role="header">
+            <h1>PICT Student Clubs</h1>
+        </div>
+        <div data-role="content">
+            <h2>Welcome to PICT Clubs</h2>
+            <p>Explore the vibrant student clubs and extracurricular activities at Pune Institute of Computer Technology (PICT). Get involved in coding, robotics, dance, and more!</p>
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#coding-club">Coding Club</a></li>
+                <li><a href="#robotics-club">Robotics Club</a></li>
+                <li><a href="#dance-club">Dance Club</a></li>
+            </ul>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#home" class="ui-btn-active">Home</a></li>
+                    <li><a href="#coding-club">Coding</a></li>
+                    <li><a href="#robotics-club">Robotics</a></li>
+                    <li><a href="#dance-club">Dance</a></li>
+                </ul>
+            </div>
+            <p>© 2025 PICT</p>
+        </div>
+    </div>
+
+    <!-- Coding Club Page -->
+    <div data-role="page" id="coding-club" data-theme="b" data-transition="slide">
+        <div data-role="header">
+            <h1>Coding Club</h1>
+        </div>
+        <div data-role="content">
+            <h2>Coding Club</h2>
+            <img src="https://3.files.edl.io/fb27/22/09/06/161754-b5a61bc5-9283-4d4e-9c63-2d8f50db304b.jpg" alt="Coding Club" class="club-image">
+            <div data-role="collapsible" data-collapsed="true">
+                <h3>Description</h3>
+                <p>The Coding Club at PICT fosters a passion for programming and problem-solving. Members participate in coding competitions, hackathons, and workshops to enhance their skills in algorithms, data structures, and software development.</p>
+            </div>
+            <div data-role="collapsible" data-collapsed="true">
+                <h3>Achievements</h3>
+                <ul data-role="listview" data-inset="true">
+                    <li>1st Place in National Hackathon 2024</li>
+                    <li>Top 10 in ACM ICPC Regional Contest 2023</li>
+                    <li>Organized CodeFest with 500+ participants</li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#coding-club" class="ui-btn-active">Coding</a></li>
+                    <li><a href="#robotics-club">Robotics</a></li>
+                    <li><a href="#dance-club">Dance</a></li>
+                </ul>
+            </div>
+            <p>© 2025 PICT</p>
+        </div>
+    </div>
+
+    <!-- Robotics Club Page -->
+    <div data-role="page" id="robotics-club" data-theme="b" data-transition="slide">
+        <div data-role="header">
+            <h1>Robotics Club</h1>
+        </div>
+        <div data-role="content">
+            <h2>Robotics Club</h2>
+            <img src="https://3.files.edl.io/fb27/22/09/06/161754-b5a61bc5-9283-4d4e-9c63-2d8f50db304b.jpg" alt="Robotics Club" class="club-image">
+            <div data-role="collapsible" data-collapsed="true">
+                <h3>Description</h3>
+                <p>The Robotics Club is dedicated to innovation in robotics and automation. Members design and build robots for national and international competitions, focusing on embedded systems, AI, and mechanical engineering.</p>
+            </div>
+            <div data-role="collapsible" data-collapsed="true">
+                <h3>Achievements</h3>
+                <ul data-role="listview" data-inset="true">
+                    <li>Winner of RoboCon India 2024</li>
+                    <li>2nd Place in World Robot Olympiad 2023</li>
+                    <li>Developed AI-powered robotic arm for industrial use</li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#coding-club">Coding</a></li>
+                    <li><a href="#robotics-club" class="ui-btn-active">Robotics</a></li>
+                    <li><a href="#dance-club">Dance</a></li>
+                </ul>
+            </div>
+            <p>© 2025 PICT</p>
+        </div>
+    </div>
+
+    <!-- Dance Club Page -->
+    <div data-role="page" id="dance-club" data-theme="b" data-transition="slide">
+        <div data-role="header">
+            <h1>Dance Club</h1>
+        </div>
+        <div data-role="content">
+            <h2>Dance Club</h2>
+            <img src="https://3.files.edl.io/fb27/22/09/06/161754-b5a61bc5-9283-4d4e-9c63-2d8f50db304b.jpg" alt="Dance Club" class="club-image">
+            <div data-role="collapsible" data-collapsed="true">
+                <h3>Description</h3>
+                <p>The Dance Club at PICT celebrates creativity through various dance forms, including hip-hop, contemporary, and classical. Members perform at college events, cultural fests, and regional competitions.</p>
+            </div>
+            <div data-role="collapsible" data-collapsed="true">
+                <h3>Achievements</h3>
+                <ul data-role="listview" data-inset="true">
+                    <li>Best Choreography Award at Mood Indigo 2024</li>
+                    <li>1st Place in Pune Cultural Fest Dance Competition 2023</li>
+                    <li>Performed at PICT Annual Fest with 1000+ audience</li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#coding-club">Coding</a></li>
+                    <li><a href="#robotics-club">Robotics</a></li>
+                    <li><a href="#dance-club" class="ui-btn-active">Dance</a></li>
+                </ul>
+            </div>
+            <p>© 2025 PICT</p>
+        </div>
+    </div>
+</body>
+</html>

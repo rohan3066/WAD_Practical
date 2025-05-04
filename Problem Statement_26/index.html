@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PICT B.E. Course Structure</title>
+    <!-- jQuery Mobile CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <!-- jQuery and jQuery Mobile JS -->
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        /* Custom styles */
+        .ui-header .ui-title {
+            font-size: 1.2em;
+            margin: 0.6em 0;
+        }
+        .ui-content {
+            padding: 1em;
+        }
+        .ui-footer {
+            text-align: center;
+            padding: 0.5em;
+        }
+        .subject-list {
+            margin: 0;
+            padding: 0;
+        }
+        .subject-list li {
+            margin-bottom: 0.5em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Course Structure Page -->
+    <div data-role="page" id="course-structure" data-theme="b" data-transition="slide">
+        <div data-role="header">
+            <h1>PICT B.E. Course Structure</h1>
+        </div>
+        <div data-role="content">
+            <h2>B.E. Course Structure</h2>
+            <p>Explore the course structure for the Bachelor of Engineering (B.E.) programs at Pune Institute of Computer Technology (PICT). Each year includes core and elective subjects designed to build a strong foundation and advanced skills in engineering.</p>
+            <div data-role="collapsible-set">
+                <!-- First Year (FE) -->
+                <div data-role="collapsible" data-collapsed="true">
+                    <h3>First Year (FE)</h3>
+                    <p>The First Year lays a strong foundation in basic sciences and engineering fundamentals, preparing students for advanced studies.</p>
+                    <ul class="subject-list" data-role="listview" data-inset="true">
+                        <li><strong>Linear Algebra and Calculus:</strong> Introduces matrix algebra, differential, and integral calculus for engineering applications.</li>
+                        <li><strong>Quantum Physics:</strong> Covers principles of quantum mechanics and their applications in modern technology.</li>
+                        <li><strong>Chemical Science and Technology:</strong> Explores chemistry concepts relevant to engineering materials and processes.</li>
+                        <li><strong>Mechanics for Robotics:</strong> Fundamentals of statics and dynamics for robotic systems.</li>
+                        <li><strong>C Programming for Problem Solving:</strong> Teaches programming concepts using C for problem-solving.</li>
+                        <li><strong>Soft Skills:</strong> Develops communication and interpersonal skills for professional growth.</li>
+                    </ul>
+                </div>
+                <!-- Second Year (SE) -->
+                <div data-role="collapsible" data-collapsed="true">
+                    <h3>Second Year (SE)</h3>
+                    <p>The Second Year introduces core engineering subjects, focusing on theoretical and practical skills in the chosen discipline (e.g., Computer Engineering).</p>
+                    <ul class="subject-list" data-role="listview" data-inset="true">
+                        <li><strong>Data Structures:</strong> Covers arrays, linked lists, stacks, queues, and trees for efficient data management.</li>
+                        <li><strong>Discrete Mathematics:</strong> Introduces logic, set theory, and graph theory for computer science applications.</li>
+                        <li><strong>Computer Organization:</strong> Explores CPU architecture, memory systems, and I/O operations.</li>
+                        <li><strong>Object-Oriented Programming:</strong> Teaches programming paradigms using languages like C++ or Java.</li>
+                        <li><strong>Digital Electronics:</strong> Covers logic gates, flip-flops, and digital circuit design.</li>
+                        <li><strong>Engineering Economics:</strong> Introduces economic principles for project evaluation and management.</li>
+                    </ul>
+                </div>
+                <!-- Third Year (TE) -->
+                <div data-role="collapsible" data-collapsed="true">
+                    <h3>Third Year (TE)</h3>
+                    <p>The Third Year emphasizes advanced topics and practical applications, preparing students for industry and research.</p>
+                    <ul class="subject-list" data-role="listview" data-inset="true">
+                        <li><strong>Database Management Systems:</strong> Covers relational databases, SQL, and data modeling.</li>
+                        <li><strong>Operating Systems:</strong> Explores process management, memory allocation, and file systems.</li>
+                        <li><strong>Computer Networks:</strong> Introduces network protocols, topologies, and security.</li>
+                        <li><strong>Software Engineering:</strong> Teaches methodologies for software design, testing, and maintenance.</li>
+                        <li><strong>Microprocessors and Microcontrollers:</strong> Covers architecture and programming of embedded systems.</li>
+                        <li><strong>Elective I:</strong> Allows specialization in areas like AI, IoT, or cybersecurity.</li>
+                    </ul>
+                </div>
+                <!-- Final Year (BE) -->
+                <div data-role="collapsible" data-collapsed="true">
+                    <h3>Final Year (BE)</h3>
+                    <p>The Final Year focuses on specialization, projects, and industry readiness, culminating in a capstone project.</p>
+                    <ul class="subject-list" data-role="listview" data-inset="true">
+                        <li><strong>Machine Learning:</strong> Introduces algorithms for data analysis and predictive modeling.</li>
+                        <li><strong>Cloud Computing:</strong> Covers cloud architectures, services, and deployment models.</li>
+                        <li><strong>Information Security:</strong> Explores cryptography, network security, and ethical hacking.</li>
+                        <li><strong>Project Management:</strong> Teaches planning, scheduling, and resource management for projects.</li>
+                        <li><strong>Elective II:</strong> Advanced topics like blockchain, big data, or robotics.</li>
+                        <li><strong>Capstone Project:</strong> A comprehensive project applying engineering principles to solve real-world problems.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#course-structure" class="ui-btn-active">Course Structure</a></li>
+                    <li><a href="https://pict.edu" data-ajax="false">PICT Website</a></li>
+                </ul>
+            </div>
+            <p>© 2025 PICT</p>
+        </div>
+    </div>
+</body>
+</html>

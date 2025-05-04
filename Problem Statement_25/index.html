@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <!-- jQuery Mobile CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <!-- jQuery and jQuery Mobile JS -->
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        /* Custom styles */
+        .ui-header .ui-title {
+            font-size: 1.2em;
+            margin: 0.6em 0;
+        }
+        .ui-content {
+            padding: 1em;
+        }
+        .ui-footer {
+            text-align: center;
+            padding: 0.5em;
+        }
+        .profile-pic {
+            max-width: 150px;
+            height: auto;
+            border-radius: 50%;
+            display: block;
+            margin: 1em auto;
+        }
+        .skill-meter {
+            margin: 0.5em 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- About Me Page -->
+    <div data-role="page" id="about" data-theme="b" data-transition="slide">
+        <div data-role="header">
+            <h1>About Me</h1>
+        </div>
+        <div data-role="content">
+            <h2>About Me</h2>
+            <img src="https://imageio.forbes.com/specials-images/imageserve/645ea1c4fce09061884bd21c/0x0.jpg?format=jpg&crop=2774,2772,x925,y0,safe&height=416&width=416&fit=bounds" alt="Profile Picture" class="profile-pic">
+            <p>Hi, I'm Alex Doe, a passionate software developer with a knack for creating innovative web and mobile applications. I specialize in full-stack development and enjoy solving complex problems with clean, efficient code.</p>
+            <div data-role="collapsible" data-collapsed="true">
+                <h3>Education</h3>
+                <p>B.E. in Computer Engineering, Pune Institute of Computer Technology, 2020-2024</p>
+            </div>
+            <div data-role="collapsible" data-collapsed="true">
+                <h3>Interests</h3>
+                <p>Open-source contributions, AI research, and hiking</p>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#about" class="ui-btn-active">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <p>© 2025 Alex Doe</p>
+        </div>
+    </div>
+
+    <!-- Projects Page -->
+    <div data-role="page" id="projects" data-theme="b" data-transition="slide">
+        <div data-role="header">
+            <h1>Projects</h1>
+        </div>
+        <div data-role="content">
+            <h2>My Projects</h2>
+            <p>Here are some of the projects I've worked on, showcasing my skills in web and mobile development.</p>
+            <div data-role="collapsible-set">
+                <div data-role="collapsible" data-collapsed="true">
+                    <h3>Task Manager App</h3>
+                    <p>A web-based task management application built with React and Node.js. Features include task creation, categorization, and real-time updates.</p>
+                    <p><strong>Technologies:</strong> React, Node.js, MongoDB, Express</p>
+                </div>
+                <div data-role="collapsible" data-collapsed="true">
+                    <h3>Weather App</h3>
+                    <p>A mobile-friendly weather forecasting app developed using Flutter, integrating a third-party API for real-time weather data.</p>
+                    <p><strong>Technologies:</strong> Flutter, REST API, Dart</p>
+                </div>
+                <div data-role="collapsible" data-collapsed="true">
+                    <h3>E-Commerce Platform</h3>
+                    <p>A full-stack e-commerce website with user authentication, product catalog, and payment integration, built using MERN stack.</p>
+                    <p><strong>Technologies:</strong> MongoDB, Express, React, Node.js</p>
+                </div>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects" class="ui-btn-active">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <p>© 2025 Alex Doe</p>
+        </div>
+    </div>
+
+    <!-- Skills Page -->
+    <div data-role="page" id="skills" data-theme="b" data-transition="slide">
+        <div data-role="header">
+            <h1>Skills</h1>
+        </div>
+        <div data-role="content">
+            <h2>My Skills</h2>
+            <p>Below is a list of my technical skills with proficiency levels.</p>
+            <div data-role="collapsible-set">
+                <div data-role="collapsible" data-collapsed="true">
+                    <h3>Programming Languages</h3>
+                    <p>JavaScript: <progress value="90" max="100" class="skill-meter"></progress> 90%</p>
+                    <p>Python: <progress value="85" max="100" class="skill-meter"></progress> 85%</p>
+                    <p>Java: <progress value="80" max="100" class="skill-meter"></progress> 80%</p>
+                </div>
+                <div data-role="collapsible" data-collapsed="true">
+                    <h3>Frameworks & Tools</h3>
+                    <p>React: <progress value="85" max="100" class="skill-meter"></progress> 85%</p>
+                    <p>Node.js: <progress value="80" max="100" class="skill-meter"></progress> 80%</p>
+                    <p>Flutter: <progress value="75" max="100" class="skill-meter"></progress> 75%</p>
+                </div>
+                <div data-role="collapsible" data-collapsed="true">
+                    <h3>Databases</h3>
+                    <p>MongoDB: <progress value="80" max="100" class="skill-meter"></progress> 80%</p>
+                    <p>MySQL: <progress value="75" max="100" class="skill-meter"></progress> 75%</p>
+                </div>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills" class="ui-btn-active">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <p>© 2025 Alex Doe</p>
+        </div>
+    </div>
+
+    <!-- Contact Info Page -->
+    <div data-role="page" id="contact" data-theme="b" data-transition="slide">
+        <div data-role="header">
+            <h1>Contact Info</h1>
+        </div>
+        <div data-role="content">
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out for collaboration, job opportunities, or just to say hi!</p>
+            <div data-role="collapsible" data-collapsed="true">
+                <h3>Contact Details</h3>
+                <p><strong>Email:</strong> alex.doe@example.com</p>
+                <p><strong>Phone:</strong> +91 98765 43210</p>
+                <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/alexdoe" data-ajax="false">linkedin.com/in/alexdoe</a></p>
+                <p><strong>GitHub:</strong> <a href="https://github.com/alexdoe" data-ajax="false">github.com/alexdoe</a></p>
+            </div>
+            <div data-role="collapsible" data-collapsed="true">
+                <h3>Location</h3>
+                <p>Pune, Maharashtra, India</p>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact" class="ui-btn-active">Contact</a></li>
+                </ul>
+            </div>
+            <p>© 2025 Alex Doe</p>
+        </div>
+    </div>
+</body>
+</html>
