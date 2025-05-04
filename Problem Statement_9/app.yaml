@@ -1,0 +1,13 @@
+runtime: python39  # use a supported runtime (static hosting trick)
+
+handlers:
+  - url: /static
+    static_dir: static
+
+  - url: /(.*\.(html|css|js|png|jpg|gif|ico|svg))
+    static_files: \1
+    upload: .*\.(html|css|js|png|jpg|gif|ico|svg)
+
+  - url: /.*
+    static_files: index.html
+    upload: index.html

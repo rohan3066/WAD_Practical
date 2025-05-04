@@ -1,10 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Middleware to parse JSON
+// Middleware to parse JSON and serve static files
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/bookstore', {
@@ -25,6 +27,22 @@ const bookSchema = new mongoose.Schema({
 });
 
 const Book = mongoose.model('Book', bookSchema);
+
+// Initialize sample books
+app.get('/api/init-books', async (req, res) => {
+    const sampleBooks = [
+        { title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', price: 12.99, genre: 'Fiction' },
+        { title: '1984', author: 'George Orwell', price: 9.99, genre: 'Dystopian' },
+        { title: 'Pride and Prejudice', author: 'Jane Austen', price: 7.99, genre: 'Romance' }
+    ];
+    try {
+        await Book.deleteMany({});
+        await Book.insertMany(sampleBooks);
+        res.json({ message: 'Sample books initialized successfully' });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
 
 // Add a new book
 app.post('/api/books', async (req, res) => {
@@ -82,6 +100,11 @@ app.delete('/api/books/:id', async (req, res) => {
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
+});
+
+// Serve the frontend
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Start the server

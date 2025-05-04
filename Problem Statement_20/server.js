@@ -1,10 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Middleware to parse JSON
+// Middleware to parse JSON and serve static files
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/employeeDB', {
@@ -26,6 +28,40 @@ const employeeSchema = new mongoose.Schema({
 });
 
 const Employee = mongoose.model('Employee', employeeSchema);
+
+// Initialize sample employees
+app.get('/api/init-employees', async (req, res) => {
+    const sampleEmployees = [
+        {
+            name: 'John Doe',
+            department: 'Engineering',
+            designation: 'Software Engineer',
+            salary: 75000,
+            joiningDate: new Date('2023-01-15')
+        },
+        {
+            name: 'Jane Smith',
+            department: 'Marketing',
+            designation: 'Marketing Manager',
+            salary: 65000,
+            joiningDate: new Date('2022-06-20')
+        },
+        {
+            name: 'Alice Brown',
+            department: 'HR',
+            designation: 'HR Specialist',
+            salary: 55000,
+            joiningDate: new Date('2021-09-10')
+        }
+    ];
+    try {
+        await Employee.deleteMany({});
+        await Employee.insertMany(sampleEmployees);
+        res.json({ message: 'Sample employees initialized successfully' });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
 
 // Add a new employee
 app.post('/api/employees', async (req, res) => {
@@ -95,6 +131,11 @@ app.delete('/api/employees/:id', async (req, res) => {
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
+});
+
+// Serve the frontend
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Start the server
